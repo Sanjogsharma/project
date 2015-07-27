@@ -19,7 +19,7 @@ I used KNNRegressor to impute missing values in the income field. I split the tr
 Further cleaning idea: It looks like many observations in the income field are off by 100s(per discussion on the Kaggle forum); I need a way to clean it.
 
 3) What you learned from exploring the data, including visualizations
-Here’s the correlation heat map: 
+
 4) How you chose which features to use in your analysis
 
 First, I created an entirely new debt ratio column using imputed income.  I am working on creating new features, and this snippet from the eventual winners in the forum is bound to be of great help: 
@@ -40,6 +40,7 @@ The biggest challenge is imputing income. Have achieved relative success imputin
 
 7) Possible extensions or business applications of your project
 - N/A - yet
+
 8) Conclusions and key learnings
 Importance of having good, high quality data
 careful examination of data before using models
