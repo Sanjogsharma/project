@@ -12,7 +12,17 @@ The competition provided historical data for 250,000 borrowers. The data was bro
 
 
 	3) Description of any pre-processing steps you took
-Both data sets had multiple missing observations in the ‘Income’ and ‘Number of dependents’ features. The average and the dependent in both sets was close to zero, and the most frequent dependent was also zero. I used Scikit learn’s preprocessor to  impute the most frequent observation(Zero) to fill the values. 
+3.1 Both data sets had multiple missing observations in the ‘Income’ and ‘Number of dependents’ features. The average and the dependent in both sets was close to zero, and the most frequent dependent was also zero. I used Scikit learn’s preprocessor to  impute the most frequent observation(Zero) to fill the values. 
+
+3.2 Other columns, despite not having missing data, had a lot of nonsensical data. Total credit utilization ranged from 0-5,000,000%. Debt Ratio had similarly absurd numbers(show example), and Number of late days too. 
+
+Due to the high correlation between number of late days and default, since default, in this case is beign late by 120 days, I had to be very thoughful in imputing these values. 
+
+3.2.1. For Credit Utilization
+3.2.2 For Debt Ratio
+3.2.3 For Number of late days. 
+
+
 
 I used KNNRegressor to impute missing values in the income field. I split the training data into two sets: those without missing income and those with missing income. I further split the data into test and train, and evaluated my KNNRegressor using Root Mean Squared error. I then used the KNNRegressor to impute missing income in the training data. I repeated the process for test data. 
 
@@ -31,7 +41,8 @@ Potential Features:
 	6)Details of your modeling process, including how you selected your models and validated them
 So far, I’ve used logistical regression using features provided by the competition and ended with a relatively unimpressive AOC score(.797, the benchmark is .864249). I’d like to ruse the following models in the future: 
 LR with additional features.
-Decision Trees
+Random Forests
+Neural Nets
 Ensemble the predictions 
 
 
